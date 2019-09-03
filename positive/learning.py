@@ -2517,7 +2517,7 @@ def romline(  domain,           # Domain of Map
 
     else:
         from numpy import inf,argmin,argmax
-        seed_list = [ 0, argmax(R), argmin(R), len(R)-1 ]
+        seed_list = [ 0, int(argmax(R)), int(argmin(R)), len(R)-1 ]
         min_sigma = inf
         for k in seed_list:
             trial_knots,trial_rom,trial_sigma = positive_romline( d, R, N, seed = k, keep_ends = keep_ends )

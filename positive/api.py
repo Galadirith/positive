@@ -53,7 +53,7 @@ def grep( flag, file_location, options=None, comment=None ):
     cmd = "grep " + '"' + flag + '" ' + file_location + options
     # Pass the command to the operating system
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
-    raw_output = process.communicate()[0]
+    raw_output = process.communicate()[0].decode('utf-8')
     # Split the raw output into a list whose elements are the file's lines
     output = raw_output.splitlines()
     # Mask the lines that are comments
